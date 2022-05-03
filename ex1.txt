@@ -1,0 +1,16 @@
+Libraries: (?)
+	TensorFlow:
+		An open-source library for Python, C, C++, Java, JavaScript. Swift, Go.
+	PyTorch
+		A Python package.
+
+Applications:
+	Handwriting recognition
+		Feeding a dataset of different characters handwritten by people to develop an understanding of patterns in order to recognize a new set of handwriten characters.
+	Image recognition
+		Similar to handwriting
+	Speech recognition
+		Follows the same concept of picking up patterns in the given dataset. However, unlike image/handwriting, which have 2 spatial dimensions (placement of the pixels) and 0 time dimensions, speech recognition deals with 1 spatial (the sequence of words) and 1 time dimension (space between the words). This difference creates a more difficult approach.
+	Face recognition (medical field)
+		Used for spotting diseases and conditions
+	Spell checking
