@@ -1,0 +1,1 @@
+One EPOCH is when the entire dataset is passed through the neural network once. One pass consists of a forward pass and a backward pass. However, one epoch is too big to give to the computer at once, thus the data set must be broken into smaller pieces. These smaller pieces are called BATCHES. The operation of going through a single batch is called an ITERATION.
