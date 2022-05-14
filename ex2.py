@@ -24,6 +24,7 @@ def sigmoid_derivative(x):
 
 #training
 for epoch in range(10000):
+	#forward propogation
 	weights_sum = np.dot(input, weights) + bias
 	output = sigmoid(weights_sum)
 
@@ -35,7 +36,7 @@ for epoch in range(10000):
 	t_input = input.T
 	final_derivative = np.dot(t_input, derivative)
 
-	#backpropogation
+	#backward propogation
 	weights = weights - 0.05 * final_derivative
 	for i in derivative:
 		bias = bias - 0.05 * i
