@@ -5,7 +5,7 @@ input = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 print(input)
 
 #output nodes
-expected_output = np.array([[0], [1], [1], [0]])
+expected_output = np.array([[0], [1], [1], [1]])
 print(expected_output, '\n')
 
 #weights
@@ -41,11 +41,10 @@ for epoch in range(10000):
 	for i in derivative:
 		bias = bias - 0.05 * i
 
-pred = np.array([1, 1])
-print('predicting (1,1):')
+pred = np.array([0, 0])
+print('predicting (0, 0):', end=' ')
 
 result = np.dot(pred, weights) + bias
-
 res = sigmoid(result)
 
 print(res)
