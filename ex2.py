@@ -1,8 +1,14 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 #input nodes
 input = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 print(input)
+
+loss_arr = []
+epoch_arr = []
+for i in range(1,10001):
+	epoch_arr.append(i)
 
 #output nodes
 expected_output = np.array([[0], [1], [1], [1]])
@@ -30,6 +36,8 @@ for epoch in range(10000):
 
 	error = output - expected_output #gap between expected output and output
 	total_error = np.square(np.subtract(output, expected_output)).mean()
+	print('Training:', error)
+	loss_arr.append(error[0])
 
 	derivative = error * sigmoid_derivative(output)
 
@@ -41,10 +49,14 @@ for epoch in range(10000):
 	for i in derivative:
 		bias = bias - 0.05 * i
 
+#prediction
 pred = np.array([0, 0])
 print('predicting (0, 0):', end=' ')
-
 result = np.dot(pred, weights) + bias
 res = sigmoid(result)
-
 print(res)
+
+# plt.plot(epoch_arr, loss_arr)
+# plt.xlabel('Epochs')
+# plt.ylabel('Expected Output - Epoch Output')
+# plt.show()
