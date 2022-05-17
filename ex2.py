@@ -34,6 +34,7 @@ for epoch in range(10000):
 	weights_sum = np.dot(input, weights) + bias
 	output = sigmoid(weights_sum)
 
+	#backward propogation
 	error = output - expected_output #gap between expected output and output
 	total_error = np.square(np.subtract(output, expected_output)).mean()
 	print('Training:', error)
@@ -43,8 +44,6 @@ for epoch in range(10000):
 
 	t_input = input.T
 	final_derivative = np.dot(t_input, derivative)
-
-	#backward propogation
 	weights = weights - 0.05 * final_derivative
 	for i in derivative:
 		bias = bias - 0.05 * i
